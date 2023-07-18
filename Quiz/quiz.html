@@ -1,377 +1,498 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Quiz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/Quiz/quiz.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
-    <script>
-        // Your Firebase configuration and initialization code
-    
-        const auth = getAuth();
-    
-        auth.onAuthStateChanged((user) => {
-            if (!user) {
-                // User is not authenticated, redirect to the login page or any other desired page
-                window.location.href = '/Login/login.html';
-            }
-        });
-    </script>
-    
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/Quiz/quiz.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+    />
+  </head>
 
-<body>
+  <body>
     <section id="header">
-        <a href="/Home/home.html" class="logo">
-            <span class="light-text">PERFECT</span>
-            <span class="dark-text">FIT</span>
-        </a>
+      <a href="/Home/home.html" class="logo">
+        <span class="light-text">PERFECT</span>
+        <span class="dark-text">FIT</span>
+      </a>
 
-        <div>
-            <ul id="navbar">
-                <li><a href="/Home/home.html">HOME</a></li>
-                <li><a href="/public/home.html">BLOG</a></li>
-                <li><a href="/About/about.html">ABOUT</a></li>
-                <li><a href="/Login/login.html"><i class="fa fa-user"></i></a></li>
-            </ul>
-        </div>
+      <div>
+        <ul id="navbar">
+          <li><a href="/Home/home.html">HOME</a></li>
+          <li><a href="/public/home.html">BLOG</a></li>
+          <li><a href="/About/about.html">ABOUT</a></li>
+          <li>
+            <a href="/Login/login.html"><i class="fa fa-user"></i></a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Question 01 -->
     <section id="question1">
-        <div id="container">
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/1.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <h2>Hello!</h2>
-                    <p>Tell us about you. We can find pieces that fit <br> your unique body, style, and occasion.</p>
-                    <form>
-                        <div class="form-row">
-                            <label for="name">Enter your name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="age">Enter your age:</label>
-                            <select id="age" name="age" required>
-                                <option value="" selected disabled>Select an age range</option>
-                                <option value="15-20">15-20</option>
-                                <option value="21-25">21-25</option>
-                                <option value="26-30">26-30</option>
-                                <option value="31-35">31-35</option>
-                                <option value="36-40">36-40</option>
-                                <option value="41-45">41-45</option>
-                                <option value="50-55">50-55</option>
-                                <option value="56-60">56-60</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="height">Enter your height:</label>
-                            <select id="height" name="height" required>
-                                <option value="" selected disabled>Select a height range</option>
-                                <option value="146-150cm">146-150cm</option>
-                                <option value="151-155cm">151-155cm</option>
-                                <option value="156-160cm">156-160cm</option>
-                                <option value="161-165cm">161-165cm</option>
-                                <option value="166-170cm">166-170cm</option>
-                                <option value="170-175cm">170-175cm</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn">Back</button>
-                            <button type="button" id="nextBtn" onclick="showquestion2()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div id="container">
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/1.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <h2>Hello!</h2>
+            <p>
+              Tell us about you. We can find pieces that fit <br />
+              your unique body, style, and occasion.
+            </p>
+            <form>
+              <div class="form-row">
+                <label for="name">Enter your name:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-row">
+                <label for="age">Enter your age:</label>
+                <select id="age" name="age" required>
+                  <option value="" selected disabled>
+                    Select an age range
+                  </option>
+                  <option value="15-20">15-20</option>
+                  <option value="21-25">21-25</option>
+                  <option value="26-30">26-30</option>
+                  <option value="31-35">31-35</option>
+                  <option value="36-40">36-40</option>
+                  <option value="41-45">41-45</option>
+                  <option value="50-55">50-55</option>
+                  <option value="56-60">56-60</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="height">Enter your height:</label>
+                <select id="height" name="height" required>
+                  <option value="" selected disabled>
+                    Select a height range
+                  </option>
+                  <option value="146-150cm">146-150cm</option>
+                  <option value="151-155cm">151-155cm</option>
+                  <option value="156-160cm">156-160cm</option>
+                  <option value="161-165cm">161-165cm</option>
+                  <option value="166-170cm">166-170cm</option>
+                  <option value="170-175cm">170-175cm</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button type="button" id="backBtn">Back</button>
+                <button type="button" id="nextBtn" onclick="showquestion2()">
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Question 02 -->
-    <section id="question2" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="question-heading">Tell us the reasons you're excited to try<br>Perfect Fit</h2>
-            </div>
-            <div class="content">
-                <div class="oval-container">
-                    <div class="oval-row">
-                        <div class="oval" onclick="toggleOval(this)">Get personalized advice</div>
-                        <div class="oval" onclick="toggleOval(this)">Update my wardrobe</div>
-                        <div class="oval" onclick="toggleOval(this)">Inspiration</div>
-                    </div>
-
-                    <div class="oval-row">
-                        <div class="oval" onclick="toggleOval(this)">Get seasonal looks</div>
-                        <div class="oval" onclick="toggleOval(this)">Get the perfect outfit</div>
-                    </div>
-
-                    <div class="oval-row">
-                        <div class="oval oval-centered" onclick="toggleOval(this)">Dress appropriately</div>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <button type="button" id="backBtn2" onclick="goToQuestion(1)">Back</button>
-                    <button type="button" id="nextBtn2" onclick="validateAndGoToNextQuestion(3)">Next</button>
-                </div>
-            </div>
+    <section id="question2" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="question-heading">
+            Tell us the reasons you're excited to try<br />Perfect Fit
+          </h2>
         </div>
+        <div class="content">
+          <div class="oval-container">
+            <div class="oval-row">
+              <div class="oval" onclick="toggleOval(this)">
+                Get personalized advice
+              </div>
+              <div class="oval" onclick="toggleOval(this)">
+                Update my wardrobe
+              </div>
+              <div class="oval" onclick="toggleOval(this)">Inspiration</div>
+            </div>
+
+            <div class="oval-row">
+              <div class="oval" onclick="toggleOval(this)">
+                Get seasonal looks
+              </div>
+              <div class="oval" onclick="toggleOval(this)">
+                Get the perfect outfit
+              </div>
+            </div>
+
+            <div class="oval-row">
+              <div class="oval oval-centered" onclick="toggleOval(this)">
+                Dress appropriately
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="button" id="backBtn2" onclick="goToQuestion(1)">
+              Back
+            </button>
+            <button
+              type="button"
+              id="nextBtn2"
+              onclick="validateAndGoToNextQuestion(3)"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 03 -->
-    <section id="question3" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="measurements-heading">Enter your body measurements</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/2.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <p class="size-chart-link"><a href="/Chart/sizechart.html">Size Chart</a></p>
-                    <p class="measurements-info">Take measurements in inches.</p>
-                    <form>
-                        <div class="form-row">
-                            <label for="bust">Bust:</label>
-                            <select id="bust" name="bust" required>
-                                <option value="" selected disabled>Select bust size</option>
-                                <option value="32">32 inches</option>
-                                <option value="34">34 inches</option>
-                                <option value="36">36 inches</option>
-                                <option value="38">38 inches</option>
-                                <option value="40">40 inches</option>
-                                <option value="42">42 inches</option>
-                                <option value="44">44 inches</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="waist">Waist:</label>
-                            <select id="waist" name="waist" required>
-                                <option value="" selected disabled>Select waist size</option>
-                                <option value="26">26 inches</option>
-                                <option value="28">28 inches</option>
-                                <option value="30">30 inches</option>
-                                <option value="32">32 inches</option>
-                                <option value="34">34 inches</option>
-                                <option value="36">36 inches</option>
-                                <option value="38">38 inches</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="hip">Hip:</label>
-                            <select id="hip" name="hip" required>
-                                <option value="" selected disabled>Select hip size</option>
-                                <option value="35">35 inches</option>
-                                <option value="37">37 inches</option>
-                                <option value="39">39 inches</option>
-                                <option value="41">41 inches</option>
-                                <option value="43">43 inches</option>
-                                <option value="45">45 inches</option>
-                                <option value="47">47 inches</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn3" onclick="goBackToQuestion2()">Back</button>
-                            <button type="button" id="nextBtn3" onclick="validateAndGoToQuestion4()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question3" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="measurements-heading">Enter your body measurements</h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/2.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <p class="size-chart-link">
+              <a href="/Chart/sizechart.html">Size Chart</a>
+            </p>
+            <p class="measurements-info">Take measurements in inches.</p>
+            <form>
+              <div class="form-row">
+                <label for="bust">Bust:</label>
+                <select id="bust" name="bust" required>
+                  <option value="" selected disabled>Select bust size</option>
+                  <option value="32">32 inches</option>
+                  <option value="34">34 inches</option>
+                  <option value="36">36 inches</option>
+                  <option value="38">38 inches</option>
+                  <option value="40">40 inches</option>
+                  <option value="42">42 inches</option>
+                  <option value="44">44 inches</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="waist">Waist:</label>
+                <select id="waist" name="waist" required>
+                  <option value="" selected disabled>Select waist size</option>
+                  <option value="26">26 inches</option>
+                  <option value="28">28 inches</option>
+                  <option value="30">30 inches</option>
+                  <option value="32">32 inches</option>
+                  <option value="34">34 inches</option>
+                  <option value="36">36 inches</option>
+                  <option value="38">38 inches</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="hip">Hip:</label>
+                <select id="hip" name="hip" required>
+                  <option value="" selected disabled>Select hip size</option>
+                  <option value="35">35 inches</option>
+                  <option value="37">37 inches</option>
+                  <option value="39">39 inches</option>
+                  <option value="41">41 inches</option>
+                  <option value="43">43 inches</option>
+                  <option value="45">45 inches</option>
+                  <option value="47">47 inches</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn3"
+                  onclick="goBackToQuestion2()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn3"
+                  onclick="validateAndGoToQuestion4()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 04 -->
-    <section id="question4" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="measurements-heading">What size do you normally wear?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/3.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <form>
-                        <div class="form-row">
-                            <label for="dress">Dress:</label>
-                            <select id="dress" name="dress" required>
-                                <option value="" selected disabled>Select option</option>
-                                <option value="32">XS (UK6)</option>
-                                <option value="34">S (UK8)</option>
-                                <option value="36">M (UK10)</option>
-                                <option value="38">L (UK12)</option>
-                                <option value="40">XL (UK14)</option>
-                                <option value="42">2XL (UK16)</option>
-                                <option value="44">3XL (UK18)</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="tshirt">Tshirts/Blousne:</label>
-                            <select id="tshirt" name="tshirt" required>
-                                <option value="" selected disabled>Select option</option>
-                                <option value="26">XS (UK6)</option>
-                                <option value="28">S (UK8)</option>
-                                <option value="30">M (UK10)</option>
-                                <option value="32">L (UK12)</option>
-                                <option value="34">XL (UK14)</option>
-                                <option value="34">2XL (UK16)</option>
-                                <option value="36">3XL (UK18)</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="pants">Pants/Denims:</label>
-                            <select id="pants" name="pants" required>
-                                <option value="" selected disabled>Select option</option>
-                                <option value="26">XS (UK6)</option>
-                                <option value="28">S (UK8)</option>
-                                <option value="30">M (UK10)</option>
-                                <option value="32">L (UK12)</option>
-                                <option value="34">XL (UK14)</option>
-                                <option value="34">2XL (UK16)</option>
-                                <option value="36">3XL (UK18)</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn4" onclick="goBackToQuestion3()">Back</button>
-                            <button type="button" id="nextBtn4" onclick="validateAndGoToQuestion5()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question4" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="measurements-heading">What size do you normally wear?</h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/3.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <form>
+              <div class="form-row">
+                <label for="dress">Dress:</label>
+                <select id="dress" name="dress" required>
+                  <option value="" selected disabled>Select option</option>
+                  <option value="32">XS (UK6)</option>
+                  <option value="34">S (UK8)</option>
+                  <option value="36">M (UK10)</option>
+                  <option value="38">L (UK12)</option>
+                  <option value="40">XL (UK14)</option>
+                  <option value="42">2XL (UK16)</option>
+                  <option value="44">3XL (UK18)</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="tshirt">Tshirts/Blousne:</label>
+                <select id="tshirt" name="tshirt" required>
+                  <option value="" selected disabled>Select option</option>
+                  <option value="26">XS (UK6)</option>
+                  <option value="28">S (UK8)</option>
+                  <option value="30">M (UK10)</option>
+                  <option value="32">L (UK12)</option>
+                  <option value="34">XL (UK14)</option>
+                  <option value="34">2XL (UK16)</option>
+                  <option value="36">3XL (UK18)</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="pants">Pants/Denims:</label>
+                <select id="pants" name="pants" required>
+                  <option value="" selected disabled>Select option</option>
+                  <option value="26">XS (UK6)</option>
+                  <option value="28">S (UK8)</option>
+                  <option value="30">M (UK10)</option>
+                  <option value="32">L (UK12)</option>
+                  <option value="34">XL (UK14)</option>
+                  <option value="34">2XL (UK16)</option>
+                  <option value="36">3XL (UK18)</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn4"
+                  onclick="goBackToQuestion3()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn4"
+                  onclick="validateAndGoToQuestion5()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
-
     <!-- Question 05 -->
-    <section id="question5" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="color-heading">What color do you want the outfit to be?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/4.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <p class="color-info">Select only <span>one</span> color. If necessary, the output will be
-                        generated by matching the given color with some other colors.</p>
-                    <form>
-                        <div class="form-row">
-                            <label for="color">Choose the color:</label>
-                            <select id="color" name="color" required>
-                                <option value="" selected disabled>Select one color</option>
-                                <option value="1">White</option>
-                                <option value="2">Silver</option>
-                                <option value="3">Grey</option>
-                                <option value="4">Black</option>
-                                <option value="5">Red</option>
-                                <option value="6">Maroon</option>
-                                <option value="7">Yellow</option>
-                                <option value="8">Olive</option>
-                                <option value="9">Lime</option>
-                                <option value="10">Green</option>
-                                <option value="11">Cyan</option>
-                                <option value="12">Teal</option>
-                                <option value="13">Blue</option>
-                                <option value="14">Magenta</option>
-                                <option value="15">Violet</option>
-                                <option value="16">Purple</option>
-                                <option value="17">Pink</option>
-                                <option value="18">Orange</option>
-                                <option value="19">Gold</option>
-                                <option value="20">Beige</option>
-                                <option value="21">Brown</option>
-                                <option value="22">Burgundy</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn5" onclick="goBackToQuestion4()">Back</button>
-                            <button type="button" id="nextBtn5" onclick="validateAndGoToQuestion6()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question5" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="color-heading">
+            What color do you want the outfit to be?
+          </h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/4.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <p class="color-info">
+              Select only <span>one</span> color. If necessary, the output will
+              be generated by matching the given color with some other colors.
+            </p>
+            <form>
+              <div class="form-row">
+                <label for="color">Choose the color:</label>
+                <select id="color" name="color" required>
+                  <option value="" selected disabled>Select one color</option>
+                  <option value="1">White</option>
+                  <option value="2">Silver</option>
+                  <option value="3">Grey</option>
+                  <option value="4">Black</option>
+                  <option value="5">Red</option>
+                  <option value="6">Maroon</option>
+                  <option value="7">Yellow</option>
+                  <option value="8">Olive</option>
+                  <option value="9">Lime</option>
+                  <option value="10">Green</option>
+                  <option value="11">Cyan</option>
+                  <option value="12">Teal</option>
+                  <option value="13">Blue</option>
+                  <option value="14">Magenta</option>
+                  <option value="15">Violet</option>
+                  <option value="16">Purple</option>
+                  <option value="17">Pink</option>
+                  <option value="18">Orange</option>
+                  <option value="19">Gold</option>
+                  <option value="20">Beige</option>
+                  <option value="21">Brown</option>
+                  <option value="22">Burgundy</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn5"
+                  onclick="goBackToQuestion4()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn5"
+                  onclick="validateAndGoToQuestion6()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 06 -->
-    <section id="question6" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="skin-heading">What is your skin tone?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/5.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <form>
-                        <div class="form-row">
-                            <label for="skin">Choose the skin tone:</label>
-                            <select id="skin" name="skin" required>
-                                <option value="" selected disabled>Select skin tone</option>
-                                <option value="1">Fair</option>
-                                <option value="2">Light</option>
-                                <option value="3">Tan</option>
-                                <option value="4">Dark</option>
-                                <option value="5">Deep</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="skin-image">Add image of your skin tone:</label>
-                            <input type="file" id="skin-image" name="skin-image" accept="image/*" required>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn6" onclick="goBackToQuestion5()">Back</button>
-                            <button type="button" id="nextBtn6" onclick="validateAndGoToQuestion7()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question6" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="skin-heading">What is your skin tone?</h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/5.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <form>
+              <div class="form-row">
+                <label for="skin">Choose the skin tone:</label>
+                <select id="skin" name="skin" required>
+                  <option value="" selected disabled>Select skin tone</option>
+                  <option value="1">Fair</option>
+                  <option value="2">Light</option>
+                  <option value="3">Tan</option>
+                  <option value="4">Dark</option>
+                  <option value="5">Deep</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="skin-image">Add image of your skin tone:</label>
+                <input
+                  type="file"
+                  id="skin-image"
+                  name="skin-image"
+                  accept="image/*"
+                  required
+                />
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn6"
+                  onclick="goBackToQuestion5()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn6"
+                  onclick="validateAndGoToQuestion7()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 07 -->
-    <section id="question7" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="occasion-heading">What kind of occasion are you looking for an outfit for?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/6.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <form>
-                        <div class="form-row">
-                            <label for="occasion">Choose the occasion:</label>
-                            <select id="occasion" name="occasion" required>
-                                <option value="" selected disabled>Select the occasion</option>
-                                <option value="1">Casual outings (hanging out with friends, running errands, etc.)
-                                </option>
-                                <option value="2">Work (office attire, professional meetings, etc.)</option>
-                                <option value="3">Formal events (weddings, engagements, etc.)</option>
-                                <option value="4">Athletic activities (yoga, running, etc.)</option>
-                                <option value="5">Special occasions (birthdays, anniversaries, etc.)</option>
-                                <option value="6">Travel (vacation, sightseeing, etc.)</option>
-                                <option value="7">Seasons and weather (summer, winter, etc.)</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn7" onclick="goBackToQuestion6()">Back</button>
-                            <button type="button" id="nextBtn7" onclick="validateAndGoToQuestion9()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question7" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="occasion-heading">
+            What kind of occasion are you looking for an outfit for?
+          </h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/6.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <form>
+              <div class="form-row">
+                <label for="occasion">Choose the occasion:</label>
+                <select id="occasion" name="occasion" required>
+                  <option value="" selected disabled>
+                    Select the occasion
+                  </option>
+                  <option value="1">
+                    Casual outings (hanging out with friends, running errands,
+                    etc.)
+                  </option>
+                  <option value="2">
+                    Work (office attire, professional meetings, etc.)
+                  </option>
+                  <option value="3">
+                    Formal events (weddings, engagements, etc.)
+                  </option>
+                  <option value="4">
+                    Athletic activities (yoga, running, etc.)
+                  </option>
+                  <option value="5">
+                    Special occasions (birthdays, anniversaries, etc.)
+                  </option>
+                  <option value="6">
+                    Travel (vacation, sightseeing, etc.)
+                  </option>
+                  <option value="7">
+                    Seasons and weather (summer, winter, etc.)
+                  </option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn7"
+                  onclick="goBackToQuestion6()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn7"
+                  onclick="validateAndGoToQuestion9()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 08 -->
@@ -408,239 +529,327 @@
     </section!-->
 
     <!-- Question 09 -->
-    <section id="question9" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="fabric-heading">What is your preferred fabric type?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/8.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <form>
-                        <div class="form-row">
-                            <label for="fabric">Choose the fabric type:</label>
-                            <select id="fabric" name="fabric" required>
-                                <option value="" selected disabled>Select the fabric</option>
-                                <option value="1">Cotton</option>
-                                <option value="2">Silk</option>
-                                <option value="3">Wool</option>
-                                <option value="4">Linen</option>
-                                <option value="5">Polyester</option>
-                                <option value="6">Leather</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn9" onclick="goBackToQuestion7()">Back</button>
-                            <button type="button" id="nextBtn9" onclick="validateAndGoToQuestion10()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question9" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="fabric-heading">What is your preferred fabric type?</h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/8.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <form>
+              <div class="form-row">
+                <label for="fabric">Choose the fabric type:</label>
+                <select id="fabric" name="fabric" required>
+                  <option value="" selected disabled>Select the fabric</option>
+                  <option value="1">Cotton</option>
+                  <option value="2">Silk</option>
+                  <option value="3">Wool</option>
+                  <option value="4">Linen</option>
+                  <option value="5">Polyester</option>
+                  <option value="6">Leather</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn9"
+                  onclick="goBackToQuestion7()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn9"
+                  onclick="validateAndGoToQuestion10()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 10 -->
-    <section id="question10" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="instruction-heading">What type of clothing are you <br>
-                    looking for?</h2>
-            </div>
-            <div class="content">
-                <div class="text-column">
-                    <h4>Instructions:</h4>
-                    <p class="paragraph">Select the appropriate clothing type you prefer. If you select Sports Wear out
-                        of the clothing types given you will be directed to some Sport Wear items which you can select.
-                        If you select any other options out of the given clothing types you will be directed to the
-                        loading page.
-                        <br><br>
-                        Click on "Next" to continue.
-                    </p>
-                    <div class="buttons">
-                        <button type="button" id="backBtn10" onclick="goBackToQuestion9()">Back</button>
-                        <button type="button" id="nextBtn10" onclick="goToQuestion11()">Next</button>
-                    </div>
-                </div>
-            </div>
+    <section id="question10" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="instruction-heading">
+            What type of clothing are you <br />
+            looking for?
+          </h2>
         </div>
+        <div class="content">
+          <div class="text-column">
+            <h4>Instructions:</h4>
+            <p class="paragraph">
+              Select the appropriate clothing type you prefer. If you select
+              Sports Wear out of the clothing types given you will be directed
+              to some Sport Wear items which you can select. If you select any
+              other options out of the given clothing types you will be directed
+              to the loading page. <br /><br />
+              Click on "Next" to continue.
+            </p>
+            <div class="buttons">
+              <button
+                type="button"
+                id="backBtn10"
+                onclick="goBackToQuestion9()"
+              >
+                Back
+              </button>
+              <button type="button" id="nextBtn10" onclick="goToQuestion11()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Question 11 -->
-    <section id="question11" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="type-heading">What type of clothing are you <br> looking for?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/9.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <form>
-                        <div class="form-row">
-                            <label for="type">Choose the clothing type:</label>
-                            <select id="type" name="type" required>
-                                <option value="" selected disabled>Select the clothing type</option>
-                                <option value="1">Dress</option>
-                                <option value="2">Shirt & Short</option>
-                                <option value="3">Shirt & Pant</option>
-                                <option value="4">Shirt & Skirt</option>
-                                <option value="5">Shirt & Denim</option>
-                                <option value="6">Shirt & Office Pants</option>
-                                <option value="7">Shirt & Leggings</option>
-                                <option value="8">Shorts & T-shirt</option>
-                                <option value="9">Shorts & Blouse</option>
-                                <option value="10">Shorts & Crop Top</option>
-                                <option value="11">Jumpsuit</option>
-                                <option value="12">T-shirt & Pants</option>
-                                <option value="13">T-shirt & Skirt</option>
-                                <option value="14">T-shirt & Denim</option>
-                                <option value="15">T-Shirt & Leggings</option>
-                                <option value="16">Skirt & Blouse</option>
-                                <option value="17">Shirt & Leggings</option>
-                                <option value="18">Skirt & Crop Top</option>
-                                <option value="19">Romper</option>
-                                <option value="20">Blouse & Denim</option>
-                                <option value="21">Blouse & Office Pants</option>
-                                <option value="22">Blouse & Leggings</option>
-                                <option value="23">Denim & Crop Top</option>
-                                <option value="24">Crop Top & Leggings</option>
-                                <option value="25">Blazer</option>
-                                <option value="26">Sweater</option>
-                                <option value="26">Sports Wear</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn11" onclick="goBackToQuestion10()">Back</button>
-                            <button type="button" id="nextBtn11" onclick="validateAndGoToQuestion12()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question11" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="type-heading">
+            What type of clothing are you <br />
+            looking for?
+          </h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/9.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <form>
+              <div class="form-row">
+                <label for="type">Choose the clothing type:</label>
+                <select id="type" name="type" required>
+                  <option value="" selected disabled>
+                    Select the clothing type
+                  </option>
+                  <option value="1">Dress</option>
+                  <option value="2">Shirt & Short</option>
+                  <option value="3">Shirt & Pant</option>
+                  <option value="4">Shirt & Skirt</option>
+                  <option value="5">Shirt & Denim</option>
+                  <option value="6">Shirt & Office Pants</option>
+                  <option value="7">Shirt & Leggings</option>
+                  <option value="8">Shorts & T-shirt</option>
+                  <option value="9">Shorts & Blouse</option>
+                  <option value="10">Shorts & Crop Top</option>
+                  <option value="11">Jumpsuit</option>
+                  <option value="12">T-shirt & Pants</option>
+                  <option value="13">T-shirt & Skirt</option>
+                  <option value="14">T-shirt & Denim</option>
+                  <option value="15">T-Shirt & Leggings</option>
+                  <option value="16">Skirt & Blouse</option>
+                  <option value="17">Shirt & Leggings</option>
+                  <option value="18">Skirt & Crop Top</option>
+                  <option value="19">Romper</option>
+                  <option value="20">Blouse & Denim</option>
+                  <option value="21">Blouse & Office Pants</option>
+                  <option value="22">Blouse & Leggings</option>
+                  <option value="23">Denim & Crop Top</option>
+                  <option value="24">Crop Top & Leggings</option>
+                  <option value="25">Blazer</option>
+                  <option value="26">Sweater</option>
+                  <option value="26">Sports Wear</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn11"
+                  onclick="goBackToQuestion10()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn11"
+                  onclick="validateAndGoToQuestion12()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
-
     <!-- Question 12 -->
-    <section id="question12" style="display: none;">
-        <div id="container">
-            <div class="heading">
-                <h2 class="sportstype-heading">What type of sports wear are you looking for?</h2>
-            </div>
-            <div class="content">
-                <div class="image-column">
-                    <img src="/Images/questionnaire/10.jpg" alt="Question Image">
-                </div>
-                <div class="text-column">
-                    <form>
-                        <div class="form-row">
-                            <label for="type">Choose the type:</label>
-                            <select id="type" name="type" required>
-                                <option value="" selected disabled>Select the type</option>
-                                <option value="1">Sports short & Sports T-shirt</option>
-                                <option value="2">Sports short & Sports Bra</option>
-                                <option value="3">Sports Leggings & Sports T-shirt</option>
-                                <option value="4">Sports Leggings & Sports Bra</option>
-                                <option value="5">Sports Pants & Sports T-shirt</option>
-                                <option value="6">Sports Pants & Sports Bra</option>
-                            </select>
-                        </div>
-                        <div class="buttons">
-                            <button type="button" id="backBtn12" onclick="goBackToQuestion11()">Back</button>
-                            <button type="button" id="nextBtn12" onclick="validateAndGoToLoading()">Next</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section id="question12" style="display: none">
+      <div id="container">
+        <div class="heading">
+          <h2 class="sportstype-heading">
+            What type of sports wear are you looking for?
+          </h2>
         </div>
+        <div class="content">
+          <div class="image-column">
+            <img src="/Images/questionnaire/10.jpg" alt="Question Image" />
+          </div>
+          <div class="text-column">
+            <form>
+              <div class="form-row">
+                <label for="type">Choose the type:</label>
+                <select id="type" name="type" required>
+                  <option value="" selected disabled>Select the type</option>
+                  <option value="1">Sports short & Sports T-shirt</option>
+                  <option value="2">Sports short & Sports Bra</option>
+                  <option value="3">Sports Leggings & Sports T-shirt</option>
+                  <option value="4">Sports Leggings & Sports Bra</option>
+                  <option value="5">Sports Pants & Sports T-shirt</option>
+                  <option value="6">Sports Pants & Sports Bra</option>
+                </select>
+              </div>
+              <div class="buttons">
+                <button
+                  type="button"
+                  id="backBtn12"
+                  onclick="goBackToQuestion11()"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn12"
+                  onclick="validateAndGoToLoading()"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Loading -->
-    <section id="loading" style="display: none;">
-        <div id="container">
-            <div class="contentload">
-                <div class="loading-icon">
-                    <div class="loading-text" id="loadingText">0%</div>
-                </div>
-                <p class="para">Great! We are picking up some outfits for you.<br><span>We just need a few more
-                        seconds...</span></p>
-            </div>
+    <section id="loading" style="display: none">
+      <div id="container">
+        <div class="contentload">
+          <div class="loading-icon">
+            <div class="loading-text" id="loadingText">0%</div>
+          </div>
+          <p class="para">
+            Great! We are picking up some outfits for you.<br /><span
+              >We just need a few more seconds...</span
+            >
+          </p>
         </div>
+      </div>
     </section>
 
-
     <!-- next -->
-    <section id="next" style="display: none;">
-        <div id="container">
-            <div class="content">
-                <!--div class="loading-icon">
+    <section id="next" style="display: none">
+      <div id="container">
+        <div class="content">
+          <!--div class="loading-icon">
               <div class="loading-text">0%</div>
             </div>
             <p class="para">Great! We are picking up some outfits for you.<br><span>We just need a few more seconds...</span></p!-->
-            </div>
         </div>
+      </div>
     </section>
-
-
-
-
 
     <script src="/Script/script.js"></script>
 
-
     <footer class="section-p1">
-        <div class="col">
-            <a href="/Home/home.html" class="logo">
-                <span class="light-text">PERFECT</span>
-                <span class="dark-text">FIT</span>
-            </a>
-            <p>We're ready to assist you <br> in finding the perfect <br>outfit.</p>
-            <div class="follow">
-                <h4>FOLLOW US</h4>
-                <div class="icon">
-                    <i class="fab fa-facebook-square share"></i>
-                    <i class="fab fa-instagram-square share"></i>
-                </div>
-            </div>
+      <div class="col">
+        <a href="/Home/home.html" class="logo">
+          <span class="light-text">PERFECT</span>
+          <span class="dark-text">FIT</span>
+        </a>
+        <p>
+          We're ready to assist you <br />
+          in finding the perfect <br />outfit.
+        </p>
+        <div class="follow">
+          <h4>FOLLOW US</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-square share"></i>
+            <i class="fab fa-instagram-square share"></i>
+          </div>
         </div>
+      </div>
 
-        <div class="col-main">
-            <h4>QUICK LINKS</h4>
-            <ul>
-                <li><a href="/About/about.html">About</a></li>
-                <li><a href="/public/home.html">Blog</a></li>
-                <li><a href="/Policy/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/Terms/terms.html">Terms Of Use</a></li>
-                <li><a href="/Chart/sizechart.html">Size Chart</a></li>
-            </ul>
-        </div>
+      <div class="col-main">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="/About/about.html">About</a></li>
+          <li><a href="/public/home.html">Blog</a></li>
+          <li><a href="/Policy/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/Terms/terms.html">Terms Of Use</a></li>
+          <li><a href="/Chart/sizechart.html">Size Chart</a></li>
+        </ul>
+      </div>
 
-        <div class="col-two">
-            <h4>ACCOUNT</h4>
-            <ul>
-                <li><a href="/Login/signup.html">Sign Up</a></li>
-                <li><a href="/Login/login.html">Login</a></li>
+      <div class="col-two">
+        <h4>ACCOUNT</h4>
+        <ul>
+          <li><a href="/Login/signup.html">Sign Up</a></li>
+          <li><a href="/Login/login.html">Login</a></li>
+        </ul>
+      </div>
 
-            </ul>
-        </div>
+      <div class="col-three">
+        <p>
+          Perfect Fit is a personalized<br />
+          fashion advising system that<br />
+          provides style services for<br />
+          women. We have specialized<br />
+          in recommending outfits.<br />
+          <br />
 
-        <div class="col-three">
-            <p>Perfect Fit is a personalized<br>
-                fashion advising system that<br>
-                provides style services for<br>
-                women. We have specialized<br>
-                in recommending outfits.<br> <br>
-
-                Our vision is to recommend and <br>
-                advise on providing up-to-date, <br>
-                high-quality, perfect-size outfits <br>
-                to our users.</p>
-        </div>
-
+          Our vision is to recommend and <br />
+          advise on providing up-to-date, <br />
+          high-quality, perfect-size outfits <br />
+          to our users.
+        </p>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+  import { getAuth,} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+  import { ref, set,} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAsbQQ1v4-iFojDtq_ZMnGQjD05p1NyqR4",
+    authDomain: "perfect-fit-web-6435f.firebaseapp.com",
+    projectId: "perfect-fit-web-6435f",
+    storageBucket: "perfect-fit-web-6435f.appspot.com",
+    messagingSenderId: "281776326236",
+    appId: "1:281776326236:web:19a0d34eeda067c7268899",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+    window.onload = function() {
+        console.log("logged ");
+        auth.onAuthStateChanged((user) => {
+            console.log("logged In");
+            if (!user) {
+            // User is not authenticated, redirect to the login page or any other desired page
+            window.location.href = "/Login/login.html";
+            }
+        });
+    }
+</script>
