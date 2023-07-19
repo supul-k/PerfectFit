@@ -699,8 +699,8 @@
           <div class="text-column">
             <form>
               <div class="form-row">
-                <label for="type">Choose the type:</label>
-                <select id="type" name="type" required>
+                <label for="sportType">Choose the type:</label>
+                <select id="sportType" name="sportType" required>
                   <option value="" selected disabled>Select the type</option>
                   <option value="1">Sports short & Sports T-shirt</option>
                   <option value="2">Sports short & Sports Bra</option>
@@ -820,6 +820,7 @@
 </html>
 
 <script type="module">
+
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
   import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
@@ -854,20 +855,89 @@
         });
     }
 
-    const logoutLink = document.querySelector('a[href="logout"]');
-      logoutLink.addEventListener('click', (e) => {
-        e.preventDefault();
+  const logoutLink = document.querySelector('a[href="logout"]');
+    logoutLink.addEventListener('click', (e) => {
+      e.preventDefault();
 
-        auth.signOut()
-          .then(() => {
-            // Logout successful
-            // Redirect to the login page or perform any other desired action
-            window.location.href = "/Login/login.html";
-          })
-          .catch((error) => {
-            // An error occurred during logout
-            console.error('Logout error:', error);
-            // Handle the error appropriately
-          });
-      });
+      auth.signOut()
+        .then(() => {
+          // Logout successful
+          // Redirect to the login page or perform any other desired action
+          window.location.href = "/Login/login.html";
+        })
+        .catch((error) => {
+          // An error occurred during logout
+          console.error('Logout error:', error);
+          // Handle the error appropriately
+        });
+    });
+
+  const nameField = document.querySelector('#name');
+  const ageField = document.querySelector('#age');
+  const heightField = document.querySelector('#height');
+  const bustField = document.querySelector('#bust');
+  const waistField = document.querySelector('#waist');
+  const hipField = document.querySelector('#hip');
+  const dressField = document.querySelector('#dress');
+  const tshirtField = document.querySelector('#tshirt');
+  const pantsField = document.querySelector('#pants');
+  const colorField = document.querySelector('#color');
+  const skinField = document.querySelector('#skin');
+  const occasionField = document.querySelector('#occasion');
+  const fabricField = document.querySelector('#fabric');
+  const typeField = document.querySelector('#type');
+  const sportTypeField = document.querySelector('#sportType');
+
+  const nextButton = document.getElementById("nextBtn12");
+  // Function to save the quiz data to the Firestore collection
+  nextButton.addEventListener('click', async () => {
+    const name = nameField.value;
+    const age = ageField.value;
+    const height = heightField.value;
+    const bust = bustField.value;
+    const waist = waistField.value;
+    const hip = hipField.value;
+    const dress = dressField.value;
+    const tshirt = tshirtField.value;
+    const pants = pantsField.value;
+    const color = colorField.value;
+    const skin = skinField.value;
+    const occasion = occasionField.value;
+    const fabric = fabricField.value;
+    const type = typeField.value;
+    const sportType = sportTypeField.value;
+
+    console.log(height);
+
+    const quizCollection = collection(firestore, 'quiz');
+    const quizData = {
+      name: name,
+      age: age,
+      height: height,
+      bust: bust,
+      waist: waist,
+      hip: hip,
+      dress: dress,
+      tshirt: tshirt,
+      pants: pants,
+      color: color,
+      skin: skin,
+      occasion: occasion,
+      fabric: fabric,
+      type: type,
+      sportType: sportType
+      // Add any other quiz details you want to save
+    };
+
+    try {
+      const docRef = await addDoc(quizCollection, quizData);
+      console.log('Quiz data saved successfully with ID:', docRef.id);
+      // Redirect to a success page or perform any other desired action
+    } catch (error) {
+      console.error('Error saving quiz data:', error);
+      // Handle the error appropriately
+    }
+  });
+
+
 </script>
