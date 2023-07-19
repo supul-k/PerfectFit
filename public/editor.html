@@ -29,6 +29,7 @@
         <li><a class="active" href="/public/home.html">BLOG</a></li>
         <li><a href="/About/about.html">ABOUT</a></li>
         <li><a href="/Login/login.html"><i class="fa fa-user"></i></a></li>
+        <li><a href="logout">LogOut</a></li>
       </ul>
     </div>
   </section>
@@ -44,19 +45,15 @@
   </div>
 
   <div class="blog-options">
-    <button class="btn dark publish-btn">publish</button>
     <input type="file" accept="image/*" id="image-upload" hidden>
     <label for="image-upload" class="btn grey upload-btn">Upload Image</label>
+    <button class="btn dark publish-btn">publish</button>
   </div>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-
-    
     // Your custom JavaScript code that uses Firebase
     import "/public/js/firebase.js"; 
-    import "/public/js/editor.js"; 
+    // import "/public/js/editor.js"; 
   </script>
 
 </body>

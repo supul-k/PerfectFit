@@ -76,12 +76,12 @@
 
     // Your web app's Firebase configuration
     const firebaseConfig = {
-        apiKey: "AIzaSyCFMZiI81PLeSUfWSZJA78ppkOuLfgt8zU",
-        authDomain: "perfect-fit-web.firebaseapp.com",
-        projectId: "perfect-fit-web",
-        storageBucket: "perfect-fit-web.appspot.com",
-        messagingSenderId: "89161650010",
-        appId: "1:89161650010:web:fe2058ac70b91f7e5aed63"
+        apiKey: "AIzaSyAsbQQ1v4-iFojDtq_ZMnGQjD05p1NyqR4",
+        authDomain: "perfect-fit-web-6435f.firebaseapp.com",
+        projectId: "perfect-fit-web-6435f",
+        storageBucket: "perfect-fit-web-6435f.appspot.com",
+        messagingSenderId: "281776326236",
+        appId: "1:281776326236:web:19a0d34eeda067c7268899",
     };
 
     // Initialize Firebase
@@ -104,11 +104,13 @@
 
                 // Store user's last_login_date in the database
                 const userRef = ref(database, 'users/' + user.uid);
+                console.log('Before redirection');
                 const last_login_date = new Date().toISOString(); // Convert to string
                 update(userRef, { last_login_date: last_login_date }) // Store as string
                     .then(() => {
                         // Data stored successfully
                         // Redirect to login page
+                       
                         window.location.href = '/Home/home.html';
                     })
                     .catch((error) => {
