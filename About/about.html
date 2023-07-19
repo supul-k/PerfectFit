@@ -25,6 +25,7 @@
         <li><a href="/public/home.html">BLOG</a></li>
         <li><a class="active" href="/About/about.html">ABOUT</a></li>
         <li><a href="/Login/login.html"><i class="fa fa-user"></i></a></li>
+        <li><a href="logout">LogOut</a></li>
       </ul>
     </div>
   </section>
@@ -134,3 +135,52 @@
 
 </body>
 </html>
+
+<script src="/Script/homeScript.js" type="module"></script>
+    <script type="module">
+      import { getAuth, onAuthStateChanged,} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+      import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyAsbQQ1v4-iFojDtq_ZMnGQjD05p1NyqR4",
+        authDomain: "perfect-fit-web-6435f.firebaseapp.com",
+        projectId: "perfect-fit-web-6435f",
+        storageBucket: "perfect-fit-web-6435f.appspot.com",
+        messagingSenderId: "281776326236",
+        appId: "1:281776326236:web:19a0d34eeda067c7268899",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+
+      // Listen for changes in the user's authentication state
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is authenticated
+          console.log("User is authenticated");
+          // You can access the user's information using the 'user' object
+        } else {
+          // User is not authenticated
+          console.log("User is not authenticated");
+        }
+      });
+
+      const logoutLink = document.querySelector('a[href="logout"]');
+      logoutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        auth.signOut()
+          .then(() => {
+            // Logout successful
+            // Redirect to the login page or perform any other desired action
+            window.location.href = "/Login/login.html";
+          })
+          .catch((error) => {
+            // An error occurred during logout
+            console.error('Logout error:', error);
+            // Handle the error appropriately
+          });
+      });
+</script>

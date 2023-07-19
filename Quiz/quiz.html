@@ -41,6 +41,7 @@
           <li>
             <a href="/Login/login.html"><i class="fa fa-user"></i></a>
           </li>
+          <li><a href="logout">LogOut</a></li>
         </ul>
       </div>
     </section>
@@ -852,4 +853,21 @@
             }
         });
     }
+
+    const logoutLink = document.querySelector('a[href="logout"]');
+      logoutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        auth.signOut()
+          .then(() => {
+            // Logout successful
+            // Redirect to the login page or perform any other desired action
+            window.location.href = "/Login/login.html";
+          })
+          .catch((error) => {
+            // An error occurred during logout
+            console.error('Logout error:', error);
+            // Handle the error appropriately
+          });
+      });
 </script>
